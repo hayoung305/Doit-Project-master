@@ -61,7 +61,7 @@
                 </div>
             </template>
             <div class="modalcontainer">
-                <b-form>
+                <b-form @submit="Joinmember">
                     <!-- 아이디 -->
                     <b-form-group id="formid1" label="아이디" label-for="id" description="4~15자리 이내의 영문가 숫자로만 입력하세요.">
                         <b-form-input id="id" v-model="form.id" type="text" placeholder="아이디를 작성해 주세요." required>
@@ -78,9 +78,27 @@
                         description="* 이메일 수신을 허락하면 독자 혜택을 받을 수 있어요">
                         <b-form-radio value="Y" v-model="form.mail">예</b-form-radio>
                         <b-form-radio value="N" v-model="form.mail">아니요</b-form-radio>
-                        선택된 라디오 버튼의 값 : {{ form.mail }}
+                        <!-- 선택된 라디오 버튼의 값 : {{ form.mail }} -->
                     </b-form-group>
+                    <!-- 관심분야 선택 -->
+                    <b-form-group id="formid4" label="관심 분야 선택" label-for="checkedtype"
+                        description="관심 분야를 선택하세요. 여러 개 선택할 수 있어요.">
+                        <b-form-checkbox value="html" v-model="form.checkedtype">HTML/CSS</b-form-checkbox>
+                        <b-form-checkbox value="js" v-model="form.checkedtype">자바스크립트</b-form-checkbox>
+                        <b-form-checkbox value="python" v-model="form.checkedtype">파이썬</b-form-checkbox>
+                        <b-form-checkbox value="vue" v-model="form.checkedtype">vue.js</b-form-checkbox>
+                        <b-form-checkbox value="angular" v-model="form.checkedtype">앵귤러</b-form-checkbox>
+                        <b-form-checkbox value="react" v-model="form.checkedtype">리액트</b-form-checkbox>
+                        <b-form-checkbox value="data" v-model="form.checkedtype">자료구조/알고리즘</b-form-checkbox>
+                        <b-form-checkbox value="cad" v-model="form.checkedtype">오토캐드</b-form-checkbox>
+                    </b-form-group>
+                    <!-- 버튼 -->
+                    <div class="btnwrap half">
+                        <b-button type="submit" variant="login">확인</b-button>
+                        <b-button type="reset" variant="cancel">취소</b-button>
+                    </div>
                 </b-form>
+                <!-- 관심분야 선택 : {{ form.checkedtype }} -->
             </div>
         </b-modal>
     </header>
@@ -101,6 +119,7 @@ export default {
                 id: "",
                 pass: "",
                 mail: "",
+                checkedtype: [],
             }
         };
     },
@@ -109,6 +128,16 @@ export default {
             if (this.$router.currentRoute.path !== target) {
                 this.$router.push(target);
             }
+        },
+        Joinmember(event) {
+            event.preventDefault();
+            alert(JSON.stringify(this.form));
+            this.$nextTick(() => {
+                this.form.id = "";
+                this.form.pass = "";
+                this.form.mail = "";
+                this.form.checkedtype = [];
+            });
         },
     },
 };
