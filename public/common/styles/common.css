@@ -148,6 +148,25 @@ header::after{
      z-index: 2;
 }
 
+/* header(메뉴고정) */
+.scrollTop{
+     width: 100%;
+     position: fixed;
+     left: 0;
+     top: 0;
+     z-index: 9999;
+}
+
+.scrollTop .topmenu{
+     display: none;
+}
+
+header.scrollTop::after{
+     position: fixed;
+     top: 22px;
+}
+
+
 #wrap{
      display: flex;
      flex-direction: column;
@@ -729,6 +748,10 @@ footer{
 
 /* 모바일 */
 @media screen and (max-width: 767px) {
+     header.scrollTop::after{
+          top: 14px;
+     }
+
      nav ul > li{
           flex: auto;
           padding-right: 10px;

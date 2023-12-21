@@ -1,5 +1,5 @@
 <template>
-    <header>
+    <header class="scrollTop">
         <div class="topmenu">
             <div class="contentbox">
                 <div class="logo">
@@ -13,6 +13,7 @@
                 </div>
             </div>
         </div>
+
         <nav>
             <div class="contentbox">
                 <ul>
