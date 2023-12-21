@@ -39,9 +39,22 @@
                 <span v-for="(item, index) in hashdata" :key="index" v-html="item.text"></span>
             </div>
         </section>
-        <section class="bannermenu"></section>
+        <section class="bannermenu">
+            <div class="itembox" v-for="(item, index) in mainbanner" :key="index" @click="gotoPage(item.url)">
+                <span v-html="item.stitle"></span>
+                <strong v-html="item.maintit"></strong>
+                <i class="bi" :class="item.iconname"></i>
+            </div>
+        </section>
         <section class="notice">
-            <h1 class="maintit">공지사항</h1>
+            <div class="noticebox">
+                <h1 class="maintit">공지사항</h1>
+                <b-button variant="noticemore" @click="viewmore($event)" />
+                <div class="newsitem" v-for="(item, index) in noticelists" :key="index">
+                    <strong v-html="item.noticetit"></strong>
+                    <span v-html="item.date"></span>
+                </div>
+            </div>
         </section>
     </section>
 </template>
@@ -192,6 +205,40 @@ export default {
                 },
             ],
             keyword: "",
+            mainbanner: [
+                {
+                    stitle: "교수 및 강사 전용",
+                    maintit: "교재 샘플/강의 자료",
+                    iconname: "bi-stickies",
+                    url: "/classsample",
+                },
+                {
+                    stitle: "스터디 카페",
+                    maintit: "Do it ! 스터디룸",
+                    iconname: "bi-book-half",
+                    url: "https://cafe.naver.com/doitstudyroom",
+                },
+                {
+                    stitle: "이지스 SNS",
+                    maintit: "페이스북",
+                    iconname: "bi-facebook",
+                    url: "https://www.facebook.com/easyspub/",
+                },
+            ],
+            noticelists: [
+                {
+                    noticetit: "이지퍼블리싱/이지스에듀 저작몰 이용 지침",
+                    date: "2023.03.30",
+                },
+                {
+                    noticetit: "IT 분야 편집/기획자 모집",
+                    date: "2023.02.16",
+                },
+                {
+                    noticetit: "이지스퍼블리싱 전자책 대여 서비스 오픈!",
+                    date: "2021.10.28",
+                },
+            ],
         };
     },
     created() {
@@ -206,6 +253,21 @@ export default {
             // event.type : 이벤트의 유형을 나타냄
             document.querySelector(".active").classList.remove("active");
             event.target.classList.add("active");
+        },
+        gotoPage(url) {
+            if (url == "/classsample") {
+                this.$router.push(url);
+            } else {
+                window.open(url, "_blank");
+            }
+        },
+        viewmore(event) {
+            if (event.target.parentElement.classList.value.indexOf("full") > -1) {
+                event.target.parentElement.classList.remove("full");
+            } else {
+                event.target.parentElement.classList.add("full");
+                //console.log(event.target.parentElement.classList);
+            }
         },
     },
     computed: {
