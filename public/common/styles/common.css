@@ -886,7 +886,7 @@ footer{
      margin: -2px 2px 0 0;
 }
 
-.detailTap .btn-group-toggle::nth-of-type(1){
+.detailTap .btn-group-toggle:nth-of-type(1){
      border-left: none;
 }
 
@@ -1113,6 +1113,19 @@ footer{
           width: 14px;
           height: 14px;
           top: 3px;
+     }
+
+     .detailTap{
+          flex-wrap: wrap;
+     }
+
+     .detailTap .btn-group-toggle{
+          flex-basis: 33.3%;
+          flex-shrink: 0;
+     }
+
+     .detailTap .btn-group-toggle:nth-of-type(4){
+          border-left: none;
      }
 
 }
