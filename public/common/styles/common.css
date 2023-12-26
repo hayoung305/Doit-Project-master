@@ -1052,6 +1052,38 @@ footer{
           font-size: 20px;
      }
 
+     .book-info{
+          display: block;
+          padding: 20px 0;
+     }
+
+     .titlebar > h1{
+          font-size: 20px;
+     }
+
+     .imgview{
+          margin: 0 auto;
+     }
+
+     .infolist{
+          padding: 0;
+          margin-top: 20px;
+     }
+
+     .infolist li{
+          font-size: 14px;
+     }
+
+     .infolist li .label{
+          width: 90px;
+     }
+
+     .infolist li .label::after{
+          width: 14px;
+          height: 14px;
+          top: 3px;
+     }
+
 }
 
 
