@@ -58,7 +58,72 @@
                             <i class="bi bi-inboxes"></i>자료실
                         </b-form-radio>
                     </div>
-                    <div class="detailTapIcon"></div>
+                    <template v-if="tapselect === 'introduce'">
+                        <div class="detailTapCon">
+                            <h1 class="tapcontit">
+                                <strong>"Do it ! 웹 사이트 따라 만들기"</strong>를 소개합니다.
+                            </h1>
+                            <p>
+                                웹 어워드 코리아에서 대상, 최우수상을 수상한 현직 웹 퍼블리셔의 작업 방식 그대로 <br> 웹 사이트 하나 통째로 만들면 나도 어느새 웹 퍼블리셔! <br> 이 책
+                                한권이면 웹 사이트 하나가 뚝딱 완성
+                            </p>
+                        </div>
+                    </template>
+                    <template v-if="tapselect === 'review'">
+                        <div class="detailTapCon">
+                            <h1 class="tapcontit">
+                                <strong>출판사 리뷰</strong>
+                            </h1>
+                            <p>
+                                웹 어워드 코리아에서 대상, 최우수상을 수상한 현직 웹 퍼블리셔의 작업 방식 그대로 <br> 웹 사이트 하나 통째로 만들면 나도 어느새 웹 퍼블리셔! <br> 이 책
+                                한권이면 웹 사이트 하나가 뚝딱 완성
+                            </p>
+                        </div>
+                    </template>
+                    <template v-if="tapselect === 'order'">
+                        <div class="detailTapCon">
+                            <h1 class="tapcontit">
+                                <strong>목차</strong>
+                            </h1>
+                            <p>
+                                웹 어워드 코리아에서 대상, 최우수상을 수상한 현직 웹 퍼블리셔의 작업 방식 그대로 <br> 웹 사이트 하나 통째로 만들면 나도 어느새 웹 퍼블리셔! <br> 이 책
+                                한권이면 웹 사이트 하나가 뚝딱 완성
+                            </p>
+                        </div>
+                    </template>
+                    <template v-if="tapselect === 'write'">
+                        <div class="detailTapCon">
+                            <h1 class="tapcontit">
+                                <strong>저자 소개</strong>
+                            </h1>
+                            <p>
+                                웹 어워드 코리아에서 대상, 최우수상을 수상한 현직 웹 퍼블리셔의 작업 방식 그대로 <br> 웹 사이트 하나 통째로 만들면 나도 어느새 웹 퍼블리셔! <br> 이 책
+                                한권이면 웹 사이트 하나가 뚝딱 완성
+                            </p>
+                        </div>
+                    </template>
+                    <template v-if="tapselect === 'recommendation'">
+                        <div class="detailTapCon">
+                            <h1 class="tapcontit">
+                                <strong>추천의 글</strong>
+                            </h1>
+                            <p>
+                                웹 어워드 코리아에서 대상, 최우수상을 수상한 현직 웹 퍼블리셔의 작업 방식 그대로 <br> 웹 사이트 하나 통째로 만들면 나도 어느새 웹 퍼블리셔! <br> 이 책
+                                한권이면 웹 사이트 하나가 뚝딱 완성
+                            </p>
+                        </div>
+                    </template>
+                    <template v-if="tapselect === 'reference'">
+                        <div class="detailTapCon">
+                            <h1 class="tapcontit">
+                                <strong>자료실</strong>
+                            </h1>
+                            <p>
+                                웹 어워드 코리아에서 대상, 최우수상을 수상한 현직 웹 퍼블리셔의 작업 방식 그대로 <br> 웹 사이트 하나 통째로 만들면 나도 어느새 웹 퍼블리셔! <br> 이 책
+                                한권이면 웹 사이트 하나가 뚝딱 완성
+                            </p>
+                        </div>
+                    </template>
                 </div>
 
             </section>

@@ -895,6 +895,26 @@ footer{
      color: #fff;
 }
 
+.detailTapCon{
+     padding: 30px;
+}
+
+.tapcontit{
+     margin-bottom: 20px;
+     font-size: 20px;
+     color: #7952b3;
+     font-weight: 900;
+}
+
+.tapcontit > strong{
+     color: #7952b3;
+     font-size: 24px;
+     font-weight: 900;
+}
+
+.detailTapCon > p{
+     margin-bottom: 20px;;
+}
 
 
 /* 테블릿 */
@@ -1126,6 +1146,15 @@ footer{
 
      .detailTap .btn-group-toggle:nth-of-type(4){
           border-left: none;
+     }
+
+     .detailTapCon{
+          padding: 20px 0;
+     }
+
+     .tapcontit,
+     .tapcontit > strong{
+          font-size: 15px;;
      }
 
 }
