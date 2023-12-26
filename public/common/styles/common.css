@@ -863,6 +863,37 @@ footer{
      top: 4px;
 }
 
+.detailTap{
+     display: flex;
+}
+
+.detailTap .btn-group-toggle{
+     flex: 1 1 auto;
+     height: 40px;
+     border-left: solid 1px #ddd;
+     background: #eaeaea;
+}
+
+.btn-detailtap{
+     color: #aeaeae;
+     font-size: 14px;
+     text-align: center;
+     line-height: 40px;
+     border-radius: 0;
+}
+
+.btn-detailtap .bi::before{
+     margin: -2px 2px 0 0;
+}
+
+.detailTap .btn-group-toggle::nth-of-type(1){
+     border-left: none;
+}
+
+.btn-detailtap.active{
+     background-color: #606060;
+     color: #fff;
+}
 
 
 

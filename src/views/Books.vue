@@ -33,6 +33,34 @@
                         </ul>
                     </div>
                 </div>
+                <div class="book-detailinfo">
+                    <div class="detailTap">
+                        <b-form-radio name="detail-tap" v-model="tapselect" value="introduce" button
+                            button-variant="detailtap">
+                            <i class="bi bi-mic"></i>책 소개
+                        </b-form-radio>
+                        <b-form-radio name="detail-tap" v-model="tapselect" value="review" button
+                            button-variant="detailtap">
+                            <i class="bi bi-chat-left-text"></i>출판사 리뷰
+                        </b-form-radio>
+                        <b-form-radio name="detail-tap" v-model="tapselect" value="order" button button-variant="detailtap">
+                            <i class="bi bi-layout-text-sidebar-reverse"></i>목차
+                        </b-form-radio>
+                        <b-form-radio name="detail-tap" v-model="tapselect" value="write" button button-variant="detailtap">
+                            <i class="bi bi-journal-text"></i>저자 소개
+                        </b-form-radio>
+                        <b-form-radio name="detail-tap" v-model="tapselect" value="recommendation" button
+                            button-variant="detailtap">
+                            <i class="bi bi-person-check"></i>추천의 글
+                        </b-form-radio>
+                        <b-form-radio name="detail-tap" v-model="tapselect" value="reference" button
+                            button-variant="detailtap">
+                            <i class="bi bi-inboxes"></i>자료실
+                        </b-form-radio>
+                    </div>
+                    <div class="detailTapIcon"></div>
+                </div>
+
             </section>
         </div>
     </Subpage>
@@ -141,6 +169,7 @@ export default {
                 { label: "정가", content: "16,000원" },
                 { label: "상태", content: "정상 판매중" },
             ],
+            tapselect: "introduce",
         }
     },
 };
